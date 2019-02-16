@@ -135,7 +135,7 @@ namespace EmguCV_WPF_Test
             // Delay 500ms and send to arduino turret
             if (m_stopwatch2.ElapsedMilliseconds >= 500)
             {
-                m_stopwatch.Restart();
+                m_stopwatch2.Restart();
                 m_serialPort.Write(COORD);
             }
         }
