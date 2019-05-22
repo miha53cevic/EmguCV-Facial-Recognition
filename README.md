@@ -1,2 +1,2 @@
 # EmguCV-Facial-Recognition
-EmguCV .NET port of OpenCV using WPF
+USing: EmguCV .NET port of OpenCV and C# WPF
