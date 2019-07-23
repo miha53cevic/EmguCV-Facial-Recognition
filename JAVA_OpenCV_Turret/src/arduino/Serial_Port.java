@@ -14,9 +14,15 @@ public class Serial_Port {
 		}
 	}
 	
-	public static void Open(String PortName) {
-		serial_port = SerialPort.getCommPort(PortName);
-		serial_port.openPort();
+	public static void Open() {
+		
+		if (SerialPort.getCommPorts().length > 0) {
+			serial_port = SerialPort.getCommPorts()[0];
+			serial_port.openPort();
+		} else {
+			System.out.println("No Comm ports found!");
+		}
+			
 	}
 	
 	public static void Close() {

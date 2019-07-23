@@ -3,7 +3,6 @@ package arduino;
 import org.opencv.core.Rect;
 
 import display_manager.display_manager;
-import Utilities.*;
 
 public class Turret {
 
@@ -20,10 +19,10 @@ public class Turret {
 			x = (faces[0].x + faces[0].width  / 2) - (display_manager.SCRN_WIDTH  / 2);
 			y = (faces[0].y + faces[0].height / 2) - (display_manager.SCRN_HEIGHT / 2);
 			
-			x = Util.map(x, -display_manager.SCRN_WIDTH   / 2, display_manager.SCRN_WIDTH   / 2, 0, 180);
-			y = Util.map(y, -display_manager.SCRN_HEIGHT  / 2, display_manager.SCRN_HEIGHT  / 2, 0, 180);
+			x = Util.map(x, -display_manager.SCRN_WIDTH   / 2, display_manager.SCRN_WIDTH   / 2, -90, 90);
+			y = Util.map(y, -display_manager.SCRN_HEIGHT  / 2, display_manager.SCRN_HEIGHT  / 2, -90, 90);
 			
-			String COORD = String.format("{%d},{%d}", (int)x, (int)y);
+			String COORD = String.format("%d,%d", (int)x, (int)y);
 			System.out.println(COORD);
 			
 			if (Serial_Port.serial_port != null && Serial_Port.serial_port.isOpen()) {

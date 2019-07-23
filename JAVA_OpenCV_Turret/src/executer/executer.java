@@ -1,5 +1,6 @@
 package executer;
 
+import java.awt.Dimension;
 import java.time.Duration;
 import java.time.Instant;
 
@@ -29,10 +30,13 @@ public class executer {
 		
 		// Create CV_JPannel used for drawing frames given from Camera object
 		CV_JPanel p = new CV_JPanel();
+		p.setPreferredSize(new Dimension(640, 480));	// Bitno staviti jer inace bude 0,0 size
 		display_manager.FRAME.getContentPane().add(p);
+		display_manager.FRAME.pack();	// Bez toga je random ako loada i zove JPanel
 		
 		// Check for ports and then open one
 		Serial_Port.getPorts();
+		Serial_Port.Open();
 		
 		// Setup camera with the camera(index)
 		Camera.Record(0);
