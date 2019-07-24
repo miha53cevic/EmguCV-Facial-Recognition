@@ -8,6 +8,7 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 
+import sound.Sound_Player;
 import arduino.Serial_Port;
 import arduino.Turret;
 import FaceDetection.Detector;
@@ -44,7 +45,9 @@ public class executer {
 		// Setup FaceDetection
 		Detector detector = new Detector("cascade_fillters/faceAlt2.xml");
 		
-		while (true) {
+		Sound_Player.Deploy();
+		
+		while (display_manager.isRunning()) {
 			Mat m = Camera.getMat();
 			
 			// find faces
@@ -67,5 +70,14 @@ public class executer {
 			// Reset timer
 			start = end;
 		}
+		
+		Sound_Player.Shutdown();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.exit(0);
 	}
 }

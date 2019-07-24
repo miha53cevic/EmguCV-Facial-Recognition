@@ -23,7 +23,7 @@ public class Turret {
 			y = Util.map(y, -display_manager.SCRN_HEIGHT  / 2, display_manager.SCRN_HEIGHT  / 2, -90, 90);
 			
 			String COORD = String.format("%d,%d", (int)x, (int)y);
-			System.out.println(COORD);
+			//System.out.println(COORD);
 			
 			if (Serial_Port.serial_port != null && Serial_Port.serial_port.isOpen()) {
 				Serial_Port.Write(COORD);
