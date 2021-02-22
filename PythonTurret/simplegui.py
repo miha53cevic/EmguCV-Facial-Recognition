@@ -15,7 +15,7 @@ def createWindow():
         [sg.Text(' ' * 30), sg.Button('Run')]
     ];
 
-    window = sg.Window('My first gui', layout=layout, default_element_size=(3,1));
+    window = sg.Window('Turret', layout=layout, default_element_size=(3,1));
 
     while True:
         # read the window
@@ -30,4 +30,3 @@ def createWindow():
         if (event == 'Run'):
             return {'capture_index': values[0], 'COM': values[1]};
             window.close();
-        

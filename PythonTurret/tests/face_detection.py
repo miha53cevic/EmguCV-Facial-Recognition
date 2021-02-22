@@ -2,7 +2,7 @@ import cv2
 
 # Get the camera and initialize cascade (face-detection)
 capture = cv2.VideoCapture(0);
-cascade = cv2.CascadeClassifier("faceAlt2.xml");
+cascade = cv2.CascadeClassifier("../faceAlt2.xml");
 
 while(True):
     # Get if camera exists - ret and get the frame from the capture device
